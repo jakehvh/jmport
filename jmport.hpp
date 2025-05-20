@@ -96,7 +96,7 @@ namespace jmport
 			return reinterpret_cast< IMAGE_NT_HEADERS* >( m_base_addr.as<uintptr_t>( ) + get_dos_header( )->e_lfanew );
 		}
 
-		address operator []( const char* function_name )
+		address operator []( const char* function_name ) const
 		{
 			if ( !m_base_addr.as<uintptr_t>( ) )
 				return address( );
